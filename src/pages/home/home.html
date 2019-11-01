@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      Torito Control
+      <ion-icon size="large" (click)="GotoInfo()" slot="end" style="position: absolute; right:10px;"
+        name="information-circle"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+
+  <br><br>
+  <table align="center" padding border="0">
+    <tr>
+      <td></td>
+      <td>
+        <button ion-button style="background-color: rgb(192, 1, 1); width:80px; height:60px;" class="submit-button"
+          (click)="sendData('E')">
+          <ion-icon size="large" name="play"></ion-icon>
+        </button>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        <br><br>
+        <button style="width:80px; height:30px;" ion-button class="submit-button" (click)="sendData('I')">
+          <ion-icon size="large" name="arrow-round-back"></ion-icon>
+        </button>
+        <br><br>
+      </td>
+      <td></td>
+      <td>
+        <br><br>
+        <button style="width:80px; height:30px;" ion-button class="submit-button" (click)="sendData('D')">
+          <ion-icon size="large" name="arrow-round-forward"></ion-icon>
+        </button>
+        <br><br>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button style="background-color: rgb(192, 1, 1); width:80px; height:60px;" ion-button class="submit-button"
+          (click)="sendData('P')">
+          <ion-icon size="large" name="pause"></ion-icon>
+        </button>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+
+
+  <br><br>
+</ion-header>
+
+<ion-content padding>
+  <!-- (click)="Add('new')" -->
+
+  <button ion-button full class="submit-button" (click)="listPairedDevices()">
+    <ion-icon name="refresh"></ion-icon>&nbsp;Verificar dispositivos en aire
+  </button>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-list radio-group [(ngModel)]="pairedDeviceID" *ngIf="listToggle">
+        <ion-item *ngFor="let i of pairedList;let j=index">
+          <ion-label>{{i.name}}</ion-label>
+          <ion-radio value="{{j}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <button ion-button full class="submit-button" *ngIf="listToggle" (click)="selectDevice()">
+    <ion-icon name="bluetooth"></ion-icon>&nbsp;Conectar
+  </button>
+
+  <ion-list *ngIf="Binnacle" class="my-ion-list">
+    <ion-item *ngFor="let i of Binnacle">
+      <ion-label>{{i}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right >
+      <button color="dark" ion-fab><label style="font-size: 40px;">+</label></button>
+      <ion-fab-list side="left">
+        <button ion-fab><ion-icon size="large" (click)="Share()" style="font-size: 30px;" name="cloud-download"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+
+</ion-content>

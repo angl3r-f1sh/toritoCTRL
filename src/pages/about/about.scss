@@ -1,0 +1,86 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ion-toolbar {
+  --background: #690000 !important;
+  color: white;
+  border: none;
+  margin: 0px;
+}
+
+#ptitle {
+  text-align: center;
+  font-size: medium;
+  font-weight: 600;
+}
+
+#ptexting {
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+  color:rgb(175, 175, 175);
+}
+
+#ptexting2 {
+  text-align: center;
+  font-size: medium;
+  font-weight: 600;
+  color:rgb(77, 77, 77);
+}
+
+#ptexting3 {
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+  color:rgb(128, 128, 128);
+}
+#pexit{
+  color:rgb(78, 78, 78);
+  font-size:medium;
+  margin-left:10px;
+  font-weight: 600;
+}
+
+#pexit2{
+color:rgb(102, 102, 102);
+font-size:smaller;
+margin-top:0px;
+margin-left:10px;
+}
+
+#pexit3{
+  color:rgb(133, 133, 133);
+  font-size:medium;
+  margin-top:-10px;
+  margin-left:10px;
+  font-weight: 600;
+}
+
+.picon{
+margin-top:-15px;
+}
+
+#picu{
+  width:70px;
+  border-radius: 150px;
+  margin-right:5px;
+  filter: grayscale(90);
+}
+
+#picu2{
+  width:70px;
+  border-radius: 150px;
+  margin-right:5px;
+}
+
+#shareb{
+  text-align: center;
+  background-color:orangered;
+  color:white;
+  border-radius: 5px;
+  padding:8px;
+  padding-left:15px;
+  padding-right:15px;
+  font-weight: 600;
+}
